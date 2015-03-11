@@ -18,11 +18,10 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DESC="statsd"
-NAME="statsd"
+NAME="<%= @service_name %>"
 DAEMON="/usr/local/sbin/statsd"
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
-SCRIPTNAME=/etc/init.d/$NAME
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
@@ -32,7 +31,7 @@ SCRIPTNAME=/etc/init.d/$NAME
 . /lib/lsb/init-functions
 
 # Exit if the package is not installed
-if ! [ -x "$DAEMON" ]; then
+if ! [ -x "${DAEMON}" ]; then
   echo "'${DAEMON}' does not exist or is not executable" >&2
   exit 5
 fi
@@ -59,7 +58,7 @@ stop() {
   #   1 if daemon was already stopped
   #   2 if daemon could not be stopped
   #   other if a failure occurred
-  start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE --name statsd
+  start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE
   RETVAL=$?
   # Many daemons don't delete their pidfiles when they exit.
   log_end_msg $RETVAL
@@ -82,7 +81,7 @@ case "$1" in
     start
     ;;
   *)
-  echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
+  echo "Usage: $0 {start|stop|status|restart|force-reload}" >&2
   exit 3
   ;;
 esac

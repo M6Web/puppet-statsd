@@ -1,18 +1,21 @@
 puppet-statsd
 =============
 
-Manage Statsd with Puppet
+Manage StatsD with Puppet
 
 Synopsis
 --------
 
     class { 'statsd':
-      graphiteserver   => 'my.graphite.server',
-      flushinterval    => 1000, # flush every second
-      percentthreshold => [75, 90, 99],
-      address          => '10.20.1.2',
-      listenport       => 2158,
-      provider         => npm,
+      provider => npm,
+    }
+
+    statsd::instance { '1':
+      graphite_server   => 'my.graphite.server',
+      flush_interval    => 1000, # flush every second
+      percent_threshold => [75, 90, 99],
+      address           => '10.20.1.2',
+      port              => 2158,
     }
 
 Notes

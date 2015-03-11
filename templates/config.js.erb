@@ -1,0 +1,18 @@
+{
+  backends: [<% @backends.each do |backend| -%>
+  "<%= backend %>",
+  <% end -%>]
+, graphitePort: "<%= @graphite_port %>"
+, graphiteHost: "<%= @graphite_server %>"
+, address: "<%= @address %>"
+, port: "<%= @port %>"
+, mgmt_address: "<%= @mgmt_address %>"
+, mgmt_port: "<%= @mgmt_port %>"
+, flushInterval: "<%= @flush_interval %>"
+, percentThreshold: [<%= @percent_threshold.join(', ') %>]
+, prefixStats: "statsd.<%= @hostname %>.<%= @name %>"
+, title: "statsd-<%= @name %>"
+<% @config.each do |k, v| -%>
+, <%= k %>: <%= v %>
+<% end -%>
+}

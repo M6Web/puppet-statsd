@@ -7,7 +7,7 @@
 . /etc/rc.d/init.d/functions
  
 DESC="statsd"
-NAME="statsd"
+NAME="<%= @service_name %>"
 DAEMON="/usr/local/sbin/statsd"
 pidfile=/var/run/statsd.pid
 lockfile=/var/lock/subsys/statsd
