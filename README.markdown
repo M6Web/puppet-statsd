@@ -40,3 +40,4 @@ Contributors
 ------------
 
   * Thanks to Ben Hughes (ben@puppetlabs.com) for initial implementation
+  * Adrien Thebo <adrien@puppetlabs.com>
