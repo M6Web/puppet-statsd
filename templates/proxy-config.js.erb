@@ -1,0 +1,13 @@
+{
+  nodes: [
+<% @nodes.each do |node| -%>
+    { host: "<%= node['host'] %>", port: <%= node['port'] %>, adminport: <%= node['adminport'] %> },
+<% end -%>
+  ],
+  udp_version: "<%= @udp_version %>",
+  host: "<%= @address %>",
+  port: "<%= @port %>",
+  forkCount: "<%= @fork_count %>",
+  checkInterval: "<%= @check_interval %>",
+  cacheSize: "<%= @cache_size %>"
+}

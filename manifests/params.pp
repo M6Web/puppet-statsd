@@ -11,6 +11,11 @@ class statsd::params {
   $ensure               = 'present'
   $provider             = 'npm'
   $config               = { }
+  $proxy_nodes          = []
+  $proxy_udp_version    = 'udp4'
+  $proxy_fork_count     = 0
+  $proxy_check_interval = 1000
+  $proxy_cache_size     = 10000
   $node_module_dir      = ''
   $node_manage          = false
   $node_version         = 'present'
@@ -20,9 +25,11 @@ class statsd::params {
       $init_script = 'statsd/statsd-init-rhel.erb'
       if ! $node_module_dir {
         $statsjs = '/usr/lib/node_modules/statsd/stats.js'
+        $proxyjs = '/usr/lib/node_modules/statsd/proxy.js'
       }
       else {
         $statsjs = "${node_module_dir}/statsd/stats.js"
+        $proxyjs = "${node_module_dir}/statsd/proxy.js"
       }
     }
     'Debian': {
@@ -31,9 +38,11 @@ class statsd::params {
         case $provider {
           'apt': {
             $statsjs = '/usr/share/statsd/stats.js'
+            $proxyjs = '/usr/share/statsd/proxy.js'
           }
           'npm': {
             $statsjs = '/usr/lib/node_modules/statsd/stats.js'
+            $proxyjs = '/usr/lib/node_modules/statsd/proxy.js'
           }
           default: {
             fail('Unsupported provider')
@@ -42,6 +51,7 @@ class statsd::params {
       } 
       else {
         $statsjs = "${node_module_dir}/statsd/stats.js"
+        $proxyjs = "${node_module_dir}/statsd/proxy.js"
       }
     }
     default: {

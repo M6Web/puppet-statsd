@@ -16,6 +16,16 @@ Synopsis
       percent_threshold => [75, 90, 99],
       address           => '10.20.1.2',
       port              => 2158,
+      mgmt_port         => 2159
+    }
+
+    statsd::proxy { '1':
+      address           => '10.20.1.4',
+      port              => 2158,
+      nodes             => [
+        { host => '10.20.1.2', port => 2158, adminport => 2159 },
+        { host => '10.20.1.3', port => 2158, adminport => 2159 }
+      ]
     }
 
 Notes
