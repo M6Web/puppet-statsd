@@ -1,5 +1,5 @@
 name 'm6web-statsd'
-version '2.0.0'
+version '2.0.1'
 author 'Pierre Guinoiseau <pguinoiseau.externe@m6.fr>'
 license 'Apache 2.0'
 
