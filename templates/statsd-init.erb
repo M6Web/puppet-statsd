@@ -73,7 +73,7 @@ case "$1" in
     stop
     ;;
   status)
-    status_of_proc "$DAEMON" "$NAME"
+    status_of_proc -p "$PIDFILE" "$DAEMON" "$NAME"
     exit $?
     ;;
   restart|force-reload)
