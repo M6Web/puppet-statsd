@@ -1,6 +1,25 @@
 CHANGELOG
 =========
 
+2.0.2
+-----
+
+  * Replace Modulefile with metadata.json
+
+2.0.1
+-----
+
+  * Fix status in init script
+
+2.0.0
+-----
+
+This is a non backward compatible update.
+
+  * Use resource definition to allow multiple instances of StatsD
+  * Add resource statsd::proxy for proxy.js
+
+
 1.0.2
 -----
 
