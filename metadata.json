@@ -1,0 +1,49 @@
+{
+  "name": "m6web-statsd",
+  "version": "2.0.2",
+  "author": "M6Web",
+  "summary": "Install and manage StatsD.",
+  "license": "Apache 2.0",
+  "source": "git://github.com/m6web/puppet-statsd.git",
+  "project_page": "https://github.com/m6web/puppet-statsd",
+  "issues_url": "https://github.com/m6web/puppet-statsd/issues",
+  "tags": [
+    "statsd",
+    "graphite",
+    "monitoring"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystmrelease": [ "6.0" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystmrelease": [ "6.0" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystmrelease": [ "12.04", "14.04" ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystmrelease": [ "7.0" ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/nodejs",
+      "version_requirement": ">= 0.2.0"
+    }
+  ]
+}
