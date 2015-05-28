@@ -31,8 +31,8 @@ Synopsis
 Notes
 -----
 
-To ensure that you have a fairly recent version of statsd, it's recommended
-that you install statds via npm. The most recent version of statds in Debian
+To ensure that you have a fairly recent version of StatsD, it's recommended
+that you install StatsD via npm. The most recent version of StatsD in Debian
 Sid is 0.0.2, which is so old that the current documentation doesn't even
 remotely apply.
 
