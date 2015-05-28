@@ -1,6 +1,6 @@
 {
   "name": "m6web-statsd",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "M6Web",
   "summary": "Install and manage StatsD.",
   "license": "Apache 2.0",
